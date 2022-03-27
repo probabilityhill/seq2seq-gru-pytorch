@@ -22,8 +22,8 @@ PATH = "./text/"
 data = ""
 num_files = int(input("Enter the number of pickle files: "))
 for i in range(num_files):
-    file_name = input(f"Enter the name of file{i}: ")
-    data += pickle.load(open(PATH+file_name, "rb"))
+    file_name = input(f"Enter the name of file{i+1}: ")
+    data += pickle.load(open(PATH+file_name+".pickle", "rb"))
 
 # ファイルの読み込み
 data = pickle.load(open(path, "rb"))
