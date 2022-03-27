@@ -9,9 +9,17 @@ PyTorchを用いたGRUによるseqence-to-seqence
 + [微笑](https://www.aozora.gr.jp/cards/000096/card2379.html)
 + [スランプ](https://www.aozora.gr.jp/cards/000096/card2134.html)
 
+＊データは「訓練用：文生成用 = 9：1」に分割
+
 ## 準備
 + textフォルダの中に、文章を分かち書きしてpickle化したものを入れる（[こちら](https://qiita.com/probabilityhill/items/86795d4d5b9b865bf1f8)を参照）
 + imgフォルダの作成
+
+## パラメータ
+```:py
+EMBEDDING_DIM = HIDDEN_DIM = 256
+BATCH_SIZE=50
+```
 
 ## 入力例
 ```
