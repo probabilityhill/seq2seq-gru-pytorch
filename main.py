@@ -191,7 +191,7 @@ class DecoderRNN(nn.Module):
 # 学習のための設定
 EMBEDDING_DIM = HIDDEN_DIM = 256
 VOCAB_SIZE = len(en_de.i2w)  # 扱う文字の数（辞書のサイズ）
-BATCH_SIZE=32
+BATCH_SIZE=50
 encoder = EncoderRNN(EMBEDDING_DIM, HIDDEN_DIM, VOCAB_SIZE, batch_size=BATCH_SIZE).to(device)
 decoder = DecoderRNN(EMBEDDING_DIM, HIDDEN_DIM, VOCAB_SIZE, batch_size=BATCH_SIZE).to(device)
 
