@@ -18,7 +18,12 @@ import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 
-path = "./text/akutagawa_kumonoito.pickle"
+PATH = "./text/"
+data = ""
+num_files = int(input("Enter the number of pickle files: "))
+for i in range(num_files):
+    file_name = input(f"Enter the name of file{num_files}: ")
+    data += pickle.load(open(PATH+file_name, "rb"))
 
 # ファイルの読み込み
 data = pickle.load(open(path, "rb"))
@@ -188,7 +193,7 @@ class DecoderRNN(nn.Module):
 # 学習のための設定
 EMBEDDING_DIM = HIDDEN_DIM = 256
 VOCAB_SIZE = len(en_de.i2w)  # 扱う文字の数（辞書のサイズ）
-BATCH_SIZE=50
+BATCH_SIZE=32
 encoder = EncoderRNN(EMBEDDING_DIM, HIDDEN_DIM, VOCAB_SIZE, batch_size=BATCH_SIZE).to(device)
 decoder = DecoderRNN(EMBEDDING_DIM, HIDDEN_DIM, VOCAB_SIZE, batch_size=BATCH_SIZE).to(device)
 
