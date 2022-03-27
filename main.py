@@ -23,10 +23,8 @@ data = []
 num_files = int(input("Enter the number of pickle files: "))
 for i in range(num_files):
     file_name = input(f"Enter the name of file{i+1}: ")
+    # ファイルの読み込み
     data += pickle.load(open(PATH+file_name+".pickle", "rb"))
-
-# ファイルの読み込み
-data = pickle.load(open(path, "rb"))
 
 # 単語をidにする
 class EncoderDecoder():
