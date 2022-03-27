@@ -1,10 +1,3 @@
-# 参考ページ
-# https://pytorch.org/tutorials/intermediate/seq2seq_translation_tutorial.html
-# https://qiita.com/hcpmiyuki/items/c6afc037518542cfe410
-# https://qiita.com/m__k/items/b18756628575b177b545
-# https://www.pytry3g.com/entry/pytorch-seq2seq#%E3%83%86%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B
-# https://www.pytry3g.com/entry/PyTorch%E3%81%A7%E8%A8%80%E8%AA%9E%E3%83%A2%E3%83%87%E3%83%AB#%E6%96%87%E5%8D%98%E4%BD%8D%E3%81%A7%E3%81%AE%E5%AE%9F%E8%A3%85
-
 import torch
 import torch.nn as nn
 import torch.optim as optimizers
