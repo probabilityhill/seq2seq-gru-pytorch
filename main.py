@@ -19,7 +19,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 PATH = "./text/"
-data = ""
+data = []
 num_files = int(input("Enter the number of pickle files: "))
 for i in range(num_files):
     file_name = input(f"Enter the name of file{i+1}: ")
