@@ -18,13 +18,13 @@ import pickle
 import numpy as np
 import matplotlib.pyplot as plt
 
-PATH = "./text/"
+PATH = "."
 data = []
 num_files = int(input("Enter the number of pickle files: "))
 for i in range(num_files):
     file_name = input(f"Enter the name of file{i+1}: ")
     # ファイルの読み込み
-    data += pickle.load(open(PATH+file_name+".pickle", "rb"))
+    data += pickle.load(open(PATH+"/text/"+file_name+".pickle", "rb"))
 
 # 単語をidにする
 class EncoderDecoder():
@@ -260,11 +260,11 @@ for epoch in tqdm(range(EPOCHS)):
             train_loss, ppl
         ))
 
-model_path =path+"/embedding{}_v{}.model".format(EMBEDDING_DIM, EPOCHS)
+MODEL_PATH =PATH+"/embedding{}_v{}.model".format(EMBEDDING_DIM, EPOCHS)
 torch.save({
     'encoder_model': encoder.state_dict(),
     'decoder_model': decoder.state_dict()
-}, model_path)
+}, MODEL_PATH)
 
 # 誤差の可視化
 train_loss = hist['train_loss']
@@ -273,7 +273,7 @@ plt.plot(range(len(train_loss)), train_loss, linewidth=1, label='train_loss')
 plt.xlabel('epochs')
 plt.ylabel('train_loss')
 plt.legend()
-plt.savefig(path+'/img/loss.jpg')
+plt.savefig(PATH+'/img/loss.jpg')
 plt.show()
 
 # 予測
@@ -317,4 +317,4 @@ def generate_sentence(model_path, embedding_dim, hidden_dim, vocab_size, batch_s
             print("".join(sentence).replace("</s>", "。"))
             print('-' * 50)
 
-generate_sentence(model_path, EMBEDDING_DIM, HIDDEN_DIM, VOCAB_SIZE)
+generate_sentence(MODEL_PATH, EMBEDDING_DIM, HIDDEN_DIM, VOCAB_SIZE)
