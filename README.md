@@ -24,7 +24,7 @@ Enter the name of file5: slump
 ```
 
 ## 学習結果
-
+![loss](https://user-images.githubusercontent.com/74280232/160275444-22ac1279-1fa3-4f80-87d3-2113b5b7a4ff.jpg)
 ```
 0%|          | 0/500 [00:00<?, ?it/s]
 --------------------
